@@ -316,6 +316,46 @@ If you prefer to deploy manually from your local machine:
 npm run deploy
 \`\`\`
 
+### Deploy to Vercel (Easiest Option!)
+
+Vercel offers the simplest deployment with automatic environment variable management.
+
+#### One-Click Deploy:
+
+1. **Push your code to GitHub** (merge your branch to main)
+
+2. **Visit Vercel and Import:**
+   - Go to [vercel.com](https://vercel.com)
+   - Click "Add New Project"
+   - Import your GitHub repository: \`LuxusEle/bom\`
+
+3. **Add Environment Variables:**
+   During import, Vercel will ask for environment variables. Add these 6:
+
+   | Variable Name | Value |
+   |---------------|-------|
+   | \`VITE_FIREBASE_API_KEY\` | \`AIzaSyDa2kKjAmkX7skCNcry2OxnDc-G6sSfK_Q\` |
+   | \`VITE_FIREBASE_AUTH_DOMAIN\` | \`purchase-order-37f12.firebaseapp.com\` |
+   | \`VITE_FIREBASE_PROJECT_ID\` | \`purchase-order-37f12\` |
+   | \`VITE_FIREBASE_STORAGE_BUCKET\` | \`purchase-order-37f12.firebasestorage.app\` |
+   | \`VITE_FIREBASE_MESSAGING_SENDER_ID\` | \`626699734505\` |
+   | \`VITE_FIREBASE_APP_ID\` | \`1:626699734505:web:88ef0481a5599bf140cf78\` |
+
+4. **Click "Deploy"** - Done in 2 minutes!
+
+**Your app will be live at:** \`https://your-project-name.vercel.app\`
+
+#### Benefits of Vercel:
+- ✅ **Automatic HTTPS** with custom domain support
+- ✅ **Auto-deploy** on every push to main
+- ✅ **Preview deployments** for pull requests
+- ✅ **Zero configuration** - just works!
+- ✅ **Free tier** includes unlimited projects
+- ✅ **Better performance** than GitHub Pages
+
+**To update environment variables later:**
+Go to: Vercel Dashboard → Your Project → Settings → Environment Variables
+
 ### Deploy to Firebase Hosting
 
 1. Install Firebase CLI:
