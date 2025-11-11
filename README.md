@@ -267,9 +267,36 @@ src/
 npm run build
 \`\`\`
 
-The build output will be in the \`dist/\` directory. Deploy this to your hosting provider (Firebase Hosting, Vercel, Netlify, etc.).
+The build output will be in the \`dist/\` directory. Deploy this to your hosting provider (GitHub Pages, Firebase Hosting, Vercel, Netlify, etc.).
 
-### Deploy to Firebase Hosting (Recommended)
+### Deploy to GitHub Pages (Easiest)
+
+GitHub Pages is the fastest way to get your app online:
+
+1. **First-time setup** (one-time only):
+   - Go to your GitHub repository
+   - Click **Settings** → **Pages**
+   - Under "Source", select **Deploy from a branch**
+   - Under "Branch", select **gh-pages** and **/ (root)**
+   - Click **Save**
+
+2. **Deploy** (run this anytime you want to update):
+   \`\`\`bash
+   npm run deploy
+   \`\`\`
+
+3. **Access your app**:
+   - Your app will be live at: \`https://LuxusEle.github.io/bom\`
+   - It takes 1-2 minutes for GitHub to publish after deploying
+
+4. **Update anytime**:
+   - Make changes to your code
+   - Run \`npm run deploy\` again
+   - GitHub Pages updates automatically
+
+**Note:** Your Firebase configuration (.env file) is not deployed to GitHub Pages for security. The app will use the Firebase config you set up locally.
+
+### Deploy to Firebase Hosting
 
 1. Install Firebase CLI:
    \`\`\`bash
