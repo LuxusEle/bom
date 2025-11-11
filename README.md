@@ -269,32 +269,52 @@ npm run build
 
 The build output will be in the \`dist/\` directory. Deploy this to your hosting provider (GitHub Pages, Firebase Hosting, Vercel, Netlify, etc.).
 
-### Deploy to GitHub Pages (Easiest)
+### Deploy to GitHub Pages (Automatic with GitHub Actions) ⭐ Recommended
 
-GitHub Pages is the fastest way to get your app online:
+Your app is configured to deploy automatically whenever you push to the main branch!
 
-1. **First-time setup** (one-time only):
-   - Go to your GitHub repository
-   - Click **Settings** → **Pages**
-   - Under "Source", select **Deploy from a branch**
-   - Under "Branch", select **gh-pages** and **/ (root)**
+#### One-Time Setup:
+
+1. **Configure GitHub Pages Source**:
+   - Go to your repository: \`https://github.com/LuxusEle/bom/settings/pages\`
+   - Under **"Source"**, select: **GitHub Actions**
    - Click **Save**
 
-2. **Deploy** (run this anytime you want to update):
-   \`\`\`bash
-   npm run deploy
-   \`\`\`
+2. **Add Firebase Secrets to GitHub** (so the build works in GitHub):
+   - Go to: \`https://github.com/LuxusEle/bom/settings/secrets/actions\`
+   - Click **"New repository secret"** and add these 6 secrets:
 
-3. **Access your app**:
-   - Your app will be live at: \`https://LuxusEle.github.io/bom\`
-   - It takes 1-2 minutes for GitHub to publish after deploying
+   | Secret Name | Value |
+   |------------|-------|
+   | \`VITE_FIREBASE_API_KEY\` | \`AIzaSyDa2kKjAmkX7skCNcry2OxnDc-G6sSfK_Q\` |
+   | \`VITE_FIREBASE_AUTH_DOMAIN\` | \`purchase-order-37f12.firebaseapp.com\` |
+   | \`VITE_FIREBASE_PROJECT_ID\` | \`purchase-order-37f12\` |
+   | \`VITE_FIREBASE_STORAGE_BUCKET\` | \`purchase-order-37f12.firebasestorage.app\` |
+   | \`VITE_FIREBASE_MESSAGING_SENDER_ID\` | \`626699734505\` |
+   | \`VITE_FIREBASE_APP_ID\` | \`1:626699734505:web:88ef0481a5599bf140cf78\` |
 
-4. **Update anytime**:
-   - Make changes to your code
-   - Run \`npm run deploy\` again
-   - GitHub Pages updates automatically
+3. **That's it!** Now every time you push to main:
+   - GitHub Actions automatically builds your app
+   - Deploys to GitHub Pages
+   - Your site updates in 1-2 minutes
 
-**Note:** Your Firebase configuration (.env file) is not deployed to GitHub Pages for security. The app will use the Firebase config you set up locally.
+#### How to Use:
+
+Just push to main and deployment happens automatically:
+\`\`\`bash
+git add .
+git commit -m "your changes"
+git push origin main
+\`\`\`
+
+**Your app will be live at:** \`https://LuxusEle.github.io/bom\`
+
+#### Manual Deployment (Alternative):
+
+If you prefer to deploy manually from your local machine:
+\`\`\`bash
+npm run deploy
+\`\`\`
 
 ### Deploy to Firebase Hosting
 
